@@ -24,8 +24,9 @@ import {
   createEventID,
   createOrLoadAccount,
   createOrLoadDomain,
-  ETH_NODE,
 } from "./utils";
+
+import { BASE_NODE } from "./env";
 
 function decodeName(buf: Bytes): Array<string> | null {
   let offset = 0;
@@ -120,7 +121,7 @@ export function handleNameUnwrapped(event: NameUnwrappedEvent): void {
 
   let domain = createOrLoadDomain(node.toHex());
   domain.wrappedOwner = null;
-  if (domain.expiryDate && domain.parent != ETH_NODE) {
+  if (domain.expiryDate && domain.parent != BASE_NODE) {
     domain.expiryDate = null;
   }
   domain.save();

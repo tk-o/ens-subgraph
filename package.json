@@ -1,8 +1,7 @@
 {
-  "name": "ens-subgraph",
-  "version": "1.0.2",
-  "repository": "https://github.com/ensdomains/ens-subgraph",
-  "license": "MIT",
+  "name": "linea-ens-subgraph",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "test": "graph test",
@@ -16,9 +15,10 @@
     "docker:remove-local": "graph remove graphprotocol/ens --node http://ens-app_graph-node_1:8020",
     "build": "graph build",
     "deploy": "graph deploy --network mainnet --product hosted-service ensdomains/ens",
-    "deploy:goerli": "graph deploy --network goerli --product hosted-service ensdomains/ensgoerli",
-    "deploy:sepolia": "graph deploy --network sepolia --studio enssepolia",
-    "deploy:holesky": "graph deploy --network holesky --studio ensholesky",
+    "deploy:sepolia": "graph deploy --network sepolia --studio ens-sepolia",
+    "deploy:holesky": "graph deploy --network holesky --studio ens-sepolia",
+    "deploy:linea-sepolia": "graph deploy --network linea-sepolia --studio ens-linea-sepolia",
+    "deploy:linea-mainnet": "graph deploy --network linea --studio ens-linea-mainnet",
     "watch-local": "graph deploy graphprotocol/ens --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
   },
   "devDependencies": {
